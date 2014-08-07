@@ -125,6 +125,8 @@ check:
 	  fi;                                                               \
 	fi
 
+sources: dist-gzip
+
 dist-gzip:
 	mkdir ib_srp-backport-$(VERSION) &&		\
 	{ git ls-tree --name-only -r HEAD	|	\
@@ -158,4 +160,4 @@ clean:
 extraclean: clean
 	rm -f *.orig *.rej
 
-.PHONY: all check clean dist-gzip extraclean install rpm
+.PHONY: all check clean dist-gzip extraclean install rpm sources
